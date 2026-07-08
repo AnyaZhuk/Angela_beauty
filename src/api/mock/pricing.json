@@ -1,0 +1,30 @@
+[
+  {
+    "id": "pkg-1",
+    "name": "Базовый уход",
+    "description": "Стрижка + укладка + консультация",
+    "price": 3200,
+    "popular": false
+  },
+  {
+    "id": "pkg-2",
+    "name": "Образ дня",
+    "description": "Маникюр + укладка + лёгкий макияж",
+    "price": 5500,
+    "popular": true
+  },
+  {
+    "id": "pkg-3",
+    "name": "Полный релакс",
+    "description": "Косметология + SPA-маникюр + массаж лица",
+    "price": 7800,
+    "popular": false
+  },
+  {
+    "id": "pkg-4",
+    "name": "Свадебный образ",
+    "description": "Причёска + макияж + пробный сеанс",
+    "price": 12000,
+    "popular": false
+  }
+]

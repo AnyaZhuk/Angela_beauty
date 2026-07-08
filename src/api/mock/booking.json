@@ -1,0 +1,56 @@
+[
+  {
+    "id": "slot-1",
+    "service": "Женская стрижка",
+    "master": "Ангелина Волкова",
+    "day": "wed",
+    "time": "11:00",
+    "duration": 60,
+    "spotsLeft": 1
+  },
+  {
+    "id": "slot-2",
+    "service": "Окрашивание",
+    "master": "Ангелина Волкова",
+    "day": "wed",
+    "time": "14:00",
+    "duration": 180,
+    "spotsLeft": 1
+  },
+  {
+    "id": "slot-3",
+    "service": "Маникюр + покрытие",
+    "master": "Мария Соколова",
+    "day": "thu",
+    "time": "10:30",
+    "duration": 90,
+    "spotsLeft": 2
+  },
+  {
+    "id": "slot-4",
+    "service": "Уходовая косметология",
+    "master": "Елена Кузнецова",
+    "day": "thu",
+    "time": "15:00",
+    "duration": 75,
+    "spotsLeft": 1
+  },
+  {
+    "id": "slot-5",
+    "service": "Макияж",
+    "master": "Дарья Морозова",
+    "day": "fri",
+    "time": "12:00",
+    "duration": 60,
+    "spotsLeft": 2
+  },
+  {
+    "id": "slot-6",
+    "service": "Педикюр",
+    "master": "Мария Соколова",
+    "day": "sat",
+    "time": "11:00",
+    "duration": 90,
+    "spotsLeft": 1
+  }
+]

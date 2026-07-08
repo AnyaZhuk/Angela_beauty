@@ -1,0 +1,95 @@
+{
+  "app": {
+    "name": "Angela Beauty",
+    "tagline": "Beauty, care and confidence in every detail"
+  },
+  "nav": {
+    "home": "Home",
+    "booking": "Booking",
+    "services": "Services",
+    "masters": "Masters",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "profile": "Profile",
+    "login": "Sign in",
+    "logout": "Sign out",
+    "register": "Register",
+    "bookNow": "Book now"
+  },
+  "home": {
+    "heroTitle": "Angela Beauty Salon",
+    "heroSubtitle": "Haircuts, coloring, nails, cosmetology and care — in a calm atmosphere focused on you",
+    "ctaBooking": "Book online",
+    "ctaServices": "Our services",
+    "statsClients": "happy clients",
+    "statsServices": "services",
+    "statsYears": "years of experience",
+    "featuresTitle": "Why Angela",
+    "featureCare": "Personal approach",
+    "featureCareText": "Consultation before every treatment — care tailored to your skin and hair",
+    "featureMasters": "Expert stylists",
+    "featureMastersText": "Certified professionals with 5+ years in leading salons",
+    "featureComfort": "Comfort & calm",
+    "featureComfortText": "Premium products, tea and a relaxing atmosphere while we take care of you"
+  },
+  "booking": {
+    "title": "Online booking",
+    "subtitle": "Choose a service, stylist and convenient time",
+    "book": "Book",
+    "duration": "Duration",
+    "spots": "Available",
+    "empty": "No slots available soon — please call us"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Full range of beauty services for your look",
+    "from": "from"
+  },
+  "masters": {
+    "title": "Masters",
+    "subtitle": "A team of trusted professionals"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Transparent prices and value packages",
+    "choose": "Book"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We look forward to your visit",
+    "address": "Address",
+    "phone": "Phone",
+    "hours": "Opening hours",
+    "hoursValue": "Mon–Sun: 10:00 AM – 9:00 PM",
+    "addressValue": "12 Moskovskaya St., Saratov"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "loginTitle": "Sign in",
+    "registerTitle": "Register",
+    "submitLogin": "Sign in",
+    "submitRegister": "Create account",
+    "noAccount": "No account?",
+    "hasAccount": "Already have an account?"
+  },
+  "profile": {
+    "title": "My profile",
+    "bookings": "My appointments",
+    "noBookings": "No active appointments yet"
+  },
+  "errors": {
+    "boundaryTitle": "Something went wrong",
+    "boundaryMessage": "Try refreshing the page or come back later.",
+    "boundaryMockHint": "Mock mode: check fixtures in src/api/mock/",
+    "retry": "Retry",
+    "reload": "Reload page"
+  },
+  "common": {
+    "loading": "Loading…",
+    "themeLight": "Light theme",
+    "themeDark": "Dark theme",
+    "language": "Language"
+  }
+}

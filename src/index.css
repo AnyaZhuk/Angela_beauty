@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Manrope, 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  @apply bg-white text-gray-900 dark:bg-slate-950 dark:text-slate-100;
+}
+
+@layer components {
+  .salon-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-salon-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-salon-primary-dark;
+  }
+
+  .salon-btn-ghost {
+    @apply inline-flex items-center gap-1 rounded-lg border border-salon-border bg-white px-4 py-2 text-sm font-medium text-salon-primary transition-colors hover:bg-salon-primary-light;
+    @apply dark:border-slate-600 dark:bg-slate-900 dark:text-pink-300 dark:hover:bg-slate-800;
+  }
+
+  .salon-card {
+    @apply rounded-xl border border-salon-border bg-white p-5 shadow-card;
+    @apply dark:border-slate-700 dark:bg-slate-900 dark:shadow-none;
+  }
+
+  .salon-page {
+    @apply mx-auto w-full max-w-6xl px-4 py-6 sm:px-6;
+  }
+}

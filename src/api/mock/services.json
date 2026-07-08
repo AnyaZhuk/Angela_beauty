@@ -1,0 +1,56 @@
+[
+  {
+    "id": "svc-1",
+    "name": "Женская стрижка",
+    "description": "Модельная стрижка с укладкой и консультацией по уходу за волосами",
+    "category": "hair",
+    "priceFrom": 2500,
+    "duration": 60,
+    "color": "#BE185D"
+  },
+  {
+    "id": "svc-2",
+    "name": "Окрашивание",
+    "description": "Сложное окрашивание, мелирование, балаяж и тонирование премиальными красителями",
+    "category": "hair",
+    "priceFrom": 4500,
+    "duration": 180,
+    "color": "#9D174D"
+  },
+  {
+    "id": "svc-3",
+    "name": "Маникюр + покрытие",
+    "description": "Аппаратный или комбинированный маникюр с гель-лаком или лечебным покрытием",
+    "category": "nails",
+    "priceFrom": 1800,
+    "duration": 90,
+    "color": "#D4A574"
+  },
+  {
+    "id": "svc-4",
+    "name": "Педикюр",
+    "description": "Комплексный уход за стопами с покрытием или SPA-уходом",
+    "category": "nails",
+    "priceFrom": 2200,
+    "duration": 90,
+    "color": "#B45309"
+  },
+  {
+    "id": "svc-5",
+    "name": "Уходовая косметология",
+    "description": "Чистка лица, пилинг, увлажняющие и anti-age процедуры",
+    "category": "cosmetology",
+    "priceFrom": 3500,
+    "duration": 75,
+    "color": "#7C3AED"
+  },
+  {
+    "id": "svc-6",
+    "name": "Макияж",
+    "description": "Дневной, вечерний и свадебный макияж с пробным нанесением",
+    "category": "makeup",
+    "priceFrom": 3000,
+    "duration": 60,
+    "color": "#DB2777"
+  }
+]
