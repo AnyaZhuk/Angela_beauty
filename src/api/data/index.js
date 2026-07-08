@@ -9,21 +9,20 @@ const routes = {
   masters: () => masters,
   pricing: () => pricing,
   'profile/bookings': () => [],
-  health: () => ({ status: 'ok', mode: 'mock' }),
 };
 
-export async function mockFetch(path, options = {}) {
+export async function fetchData(path, options = {}) {
   await new Promise((r) => setTimeout(r, 200));
 
   const key = path.replace(/^\//, '').split('?')[0];
   const handler = routes[key];
 
   if (!handler) {
-    throw new Error(`Mock route not found: ${key}`);
+    throw new Error(`Data route not found: ${key}`);
   }
 
   if (options.method && options.method !== 'GET') {
-    return { ok: true, id: `mock-${Date.now()}` };
+    return { ok: true, id: `local-${Date.now()}` };
   }
 
   return handler();

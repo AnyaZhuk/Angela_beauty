@@ -1,14 +1,13 @@
 {
   "app": {
-    "name": "Angela Beauty",
-    "tagline": "Beauty, care and confidence in every detail"
+    "name": "Салон красоты «Анжела»",
+    "tagline": "Beauty and care in the heart of Saratov"
   },
   "nav": {
     "home": "Home",
-    "booking": "Booking",
     "services": "Services",
     "masters": "Masters",
-    "pricing": "Pricing",
+    "reviews": "Reviews",
     "contact": "Contact",
     "profile": "Profile",
     "login": "Sign in",
@@ -82,7 +81,6 @@
   "errors": {
     "boundaryTitle": "Something went wrong",
     "boundaryMessage": "Try refreshing the page or come back later.",
-    "boundaryMockHint": "Mock mode: check fixtures in src/api/mock/",
     "retry": "Retry",
     "reload": "Reload page"
   },

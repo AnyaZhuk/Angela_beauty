@@ -1,101 +1,109 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import AppLogo from '../components/shared/AppLogo.jsx';
+import BookButton from '../components/shared/BookButton.jsx';
+import VkLink from '../components/shared/VkLink.jsx';
 import { useAuthStore } from '../stores/authStore.js';
-import { useThemeStore } from '../stores/themeStore.js';
+import { ADDRESS, PHONE, PHONE_DISPLAY } from '../constants/salon.js';
 
 const navItems = [
-  { to: '/', key: 'home', end: true },
-  { to: '/services', key: 'services' },
-  { to: '/masters', key: 'masters' },
-  { to: '/booking', key: 'booking' },
-  { to: '/pricing', key: 'pricing' },
-  { to: '/contact', key: 'contact' },
+  { href: '/#services', key: 'services' },
+  { href: '/#masters', key: 'masters' },
+  { href: '/#reviews', key: 'reviews' },
+  { href: '/#contacts', key: 'contact' },
 ];
 
 export default function MainLayout() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const user = useAuthStore((s) => s.user);
   const logout = useAuthStore((s) => s.logout);
-  const toggleTheme = useThemeStore((s) => s.toggleTheme);
-  const theme = useThemeStore((s) => s.theme);
 
   const handleLogout = () => {
     logout();
     navigate('/');
   };
 
-  const toggleLocale = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-  };
-
   return (
     <div className="flex min-h-full flex-col">
-      <header className="border-b border-salon-border bg-white dark:border-slate-700 dark:bg-slate-900">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <header className="sticky top-0 z-40 border-b border-salon-border bg-white/95 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <AppLogo />
-          <nav className="flex flex-wrap items-center gap-1 text-sm">
-            {navItems.map(({ to, key, end }) => (
-              <NavLink
-                key={to}
-                to={to}
-                end={end}
-                className={({ isActive }) =>
-                  `rounded-lg px-3 py-1.5 transition-colors ${
-                    isActive
-                      ? 'bg-salon-primary-light font-medium text-salon-primary-dark dark:bg-pink-950 dark:text-pink-200'
-                      : 'text-gray-600 hover:bg-gray-100 dark:text-slate-300 dark:hover:bg-slate-800'
-                  }`
-                }
+          <nav className="hidden items-center gap-1 text-sm lg:flex">
+            {navItems.map(({ href, key }) => (
+              <a
+                key={href}
+                href={href}
+                className="rounded-lg px-3 py-1.5 text-gray-600 transition-colors hover:bg-gray-100"
               >
                 {t(`nav.${key}`)}
-              </NavLink>
+              </a>
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <NavLink to="/booking" className="salon-btn-primary hidden px-3 py-1.5 text-xs sm:inline-flex">
+            <a
+              href={`tel:${PHONE}`}
+              className="hidden text-sm font-semibold text-salon-primary hover:underline sm:inline"
+            >
+              {PHONE_DISPLAY}
+            </a>
+            <VkLink className="hidden sm:inline-flex" />
+            <BookButton className="salon-btn-primary hidden px-3 text-xs sm:inline-flex">
               {t('nav.bookNow')}
-            </NavLink>
-            <button
-              type="button"
-              onClick={toggleLocale}
-              className="salon-btn-ghost px-3 py-1.5 text-xs"
-              title={t('common.language')}
-            >
-              {i18n.language.toUpperCase()}
-            </button>
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="salon-btn-ghost px-3 py-1.5 text-xs"
-              title={theme === 'light' ? t('common.themeDark') : t('common.themeLight')}
-            >
-              {theme === 'light' ? '☀' : '☾'}
-            </button>
-            {user ? (
+            </BookButton>
+            {user && (
               <>
-                <NavLink to="/profile" className="salon-btn-ghost px-3 py-1.5 text-xs">
+                <NavLink to="/profile" className="salon-btn-ghost hidden px-2 text-xs md:inline-flex">
                   {user.name || t('nav.profile')}
                 </NavLink>
-                <button type="button" onClick={handleLogout} className="salon-btn-ghost px-3 py-1.5 text-xs">
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="salon-btn-ghost hidden px-2 text-xs md:inline-flex"
+                >
                   {t('nav.logout')}
                 </button>
               </>
-            ) : (
-              <NavLink to="/login" className="salon-btn-ghost px-3 py-1.5 text-xs">
-                {t('nav.login')}
-              </NavLink>
             )}
           </div>
         </div>
       </header>
-      <main className="flex-1 bg-salon-gray-light dark:bg-slate-950">
+      <main className="flex-1 bg-salon-gray-light">
         <Outlet />
       </main>
-      <footer className="border-t border-salon-border bg-white py-6 text-center text-xs text-salon-gray dark:border-slate-700 dark:bg-slate-900">
-        <p>© {new Date().getFullYear()} {t('app.name')}</p>
-        <p className="mt-1 text-salon-accent">{t('app.tagline')}</p>
+      <footer className="border-t border-salon-border bg-white py-8">
+        <div className="salon-page !py-0">
+          <div className="grid gap-6 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <p className="text-lg font-semibold">{t('app.name')}</p>
+              <p className="mt-2 text-salon-gray">{ADDRESS}</p>
+              <a href={`tel:${PHONE}`} className="mt-1 block font-medium text-salon-primary hover:underline">
+                {PHONE_DISPLAY}
+              </a>
+            </div>
+            <div className="flex flex-col gap-2">
+              <a href="/#services" className="text-salon-gray hover:text-salon-primary">
+                Услуги
+              </a>
+              <a href="/#masters" className="text-salon-gray hover:text-salon-primary">
+                Мастера
+              </a>
+              <a href="/#reviews" className="text-salon-gray hover:text-salon-primary">
+                Отзывы
+              </a>
+              <a href="/#contacts" className="text-salon-gray hover:text-salon-primary">
+                Контакты
+              </a>
+            </div>
+            <div className="flex flex-col items-start gap-3">
+              <VkLink showLabel />
+              <BookButton className="salon-btn-primary text-xs">{t('nav.bookNow')}</BookButton>
+            </div>
+          </div>
+          <p className="mt-8 border-t border-salon-border pt-6 text-center text-xs text-salon-gray">
+            © {new Date().getFullYear()} {t('app.name')} · {t('app.tagline')}
+          </p>
+        </div>
       </footer>
     </div>
   );

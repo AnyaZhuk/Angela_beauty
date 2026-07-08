@@ -7,13 +7,15 @@
 - React 19, React Router 7
 - Vite 7, Tailwind CSS 3
 - Zustand (состояние), i18next (ru/en)
-- Vitest, Playwright (e2e)
+- Vitest
 
 ## Структура
 
 ```
 src/
-├── api/          # HTTP-клиент и mock-данные
+├── api/
+│   ├── data/     # Локальные JSON-данные
+│   └── salon.js  # Функции загрузки данных
 ├── app/          # App, маршруты
 ├── components/   # UI-компоненты
 ├── hooks/        # React-хуки
@@ -36,16 +38,9 @@ src/
 
 ```bash
 npm install
-npm run dev:mock   # dev-сервер с mock API
-npm run dev        # dev-сервер (live API на :8000)
+npm run dev
 npm run build
 npm test
 ```
 
-## Переменные окружения
-
-| Переменная | Описание |
-|---|---|
-| `VITE_USE_MOCK` | `true` — mock API |
-| `VITE_API_URL` | URL бэкенда (по умолчанию `/api`) |
-| `VITE_DEFAULT_LOCALE` | `ru` или `en` |
+Данные берутся из `src/api/data/*.json` — сервер не нужен.

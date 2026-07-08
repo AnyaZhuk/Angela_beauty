@@ -1,25 +1,25 @@
-import { apiGet } from './client.js';
+import { fetchData } from './data/index.js';
 
 export function fetchBookingSlots() {
-  return apiGet('/booking');
+  return fetchData('booking');
 }
 
 export function fetchServices() {
-  return apiGet('/services');
+  return fetchData('services');
 }
 
 export function fetchMasters() {
-  return apiGet('/masters');
+  return fetchData('masters');
 }
 
 export function fetchPricing() {
-  return apiGet('/pricing');
+  return fetchData('pricing');
 }
 
 export function fetchBookings() {
-  return apiGet('/profile/bookings');
+  return fetchData('profile/bookings');
 }
 
 export function bookSlot(slotId) {
-  return apiGet(`/booking/${slotId}/book`);
+  return fetchData(`booking/${slotId}/book`, { method: 'POST' });
 }

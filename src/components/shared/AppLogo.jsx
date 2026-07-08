@@ -1,18 +1,24 @@
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-export default function AppLogo({ compact = false }) {
-  const { t } = useTranslation();
+const LOGO_SRC = '/images/logo.png';
 
+export default function AppLogo({ compact = false }) {
   return (
-    <Link to="/" className="inline-flex items-center gap-2 font-semibold text-gray-900 dark:text-white">
-      <span
-        className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-salon-primary to-salon-accent font-display text-lg text-white"
-        aria-hidden
-      >
-        A
+    <Link to="/" className="inline-flex items-center gap-2.5 text-salon-ink dark:text-white">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-salon-primary bg-white p-1 shadow-sm">
+        <img
+          src={LOGO_SRC}
+          alt=""
+          className="h-full w-full rounded-full object-contain"
+          width={40}
+          height={40}
+        />
       </span>
-      {!compact && <span className="font-display text-lg tracking-wide">{t('app.name')}</span>}
+      {!compact && (
+        <span className="max-w-[11rem] text-sm font-semibold leading-tight sm:max-w-none sm:text-base">
+          Салон красоты «Анжела»
+        </span>
+      )}
     </Link>
   );
 }

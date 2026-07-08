@@ -1,15 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { mockFetch } from './index.js';
+import { fetchData } from './index.js';
 
-describe('mock API', () => {
+describe('local data', () => {
   it('returns services list', async () => {
-    const services = await mockFetch('services');
+    const services = await fetchData('services');
     expect(services).toHaveLength(6);
     expect(services[0]).toHaveProperty('name');
   });
 
   it('returns masters list', async () => {
-    const masters = await mockFetch('masters');
+    const masters = await fetchData('masters');
     expect(masters.length).toBeGreaterThan(0);
   });
 });
